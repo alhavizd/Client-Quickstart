@@ -24,17 +24,17 @@ Route::get('/redirect', function () {
         'scope' => '',
     ]);
 
-    return redirect('http://localhost:8000/oauth/authorize?'.$query);
+    return redirect('http://server.test/oauth/authorize?'.$query);
 })->name('get.token');
 
 Route::get('/callback', function (Request $request) {
     $http = new GuzzleHttp\Client;
 
-    $response = $http->post('http://localhost:8000/oauth/token', [
+    $response = $http->post('http://server.test/oauth/token', [
         'form_params' => [
             'grant_type' => 'authorization_code',
             'client_id' => '3',
-            'client_secret' => 'BWl9ejT2UxqacYIWICu8sjHqBEKJVMLMK5ZlTrl8',
+            'client_secret' => 'PNfNGyar5s3Li3LDUgxzafjKBJT1sYsaYbGu2OiP',
             'redirect_uri' => 'http://client.test/callback',
             'code' => $request->code,
         ],
