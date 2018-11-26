@@ -34,7 +34,7 @@ Route::get('/callback', function (Request $request) {
         'form_params' => [
             'grant_type' => 'authorization_code',
             'client_id' => '3',
-            'client_secret' => 'PNfNGyar5s3Li3LDUgxzafjKBJT1sYsaYbGu2OiP',
+            'client_secret' => '6ZZNqZ857DNMQDkisbMtt6hSu5FcmN72C34cbhWq',
             'redirect_uri' => 'http://client.test/callback',
             'code' => $request->code,
         ],
